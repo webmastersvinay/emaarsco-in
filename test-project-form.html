@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Form Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 50px auto; padding: 20px; }
+        .form-group { margin: 15px 0; }
+        input, button { width: 100%; padding: 10px; margin: 5px 0; }
+        button { background: #007bff; color: white; border: none; cursor: pointer; }
+        button:hover { background: #0056b3; }
+        .success { color: green; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <h1>Project Form Test (EBD 83 Style)</h1>
+    <p>Testing the same form structure as project pages.</p>
+    
+    <form name="callback" id="quichForm" method="post" action="#">
+        <div class="form-group">
+            <label>Name:</label>
+            <input name="name" type="text" placeholder="Your Name" required>
+        </div>
+        
+        <div class="form-group">
+            <label>Email:</label>
+            <input name="email" type="email" placeholder="your@email.com" required>
+        </div>
+        
+        <div class="form-group">
+            <label>Mobile:</label>
+            <input name="mobile" type="tel" placeholder="9876543210" required>
+        </div>
+        
+        <div class="form-group">
+            <label>Project:</label>
+            <input name="project" type="text" value="EBD 83 Test" readonly>
+        </div>
+        
+        <button type="submit">Send Test Email</button>
+    </form>
+    
+    <div id="result"></div>
+    
+    <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="assets/js/form-handler.js"></script>
+    
+    <script>
+        // Test form submission
+        document.getElementById('quichForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const result = document.getElementById('result');
+            result.innerHTML = '<p class="success">✅ Form submitted successfully! Check your email.</p>';
+        });
+    </script>
+</body>
+</html>

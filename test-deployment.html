@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Test - Emaar SCO</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 50px auto; padding: 20px; }
+        .form-group { margin: 15px 0; }
+        input, button { width: 100%; padding: 10px; margin: 5px 0; }
+        button { background: #007bff; color: white; border: none; cursor: pointer; }
+        button:hover { background: #0056b3; }
+        .success { color: green; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <h1>Emaar SCO Form Test</h1>
+    <p>Test your form before going live. This will help verify EmailJS is working correctly.</p>
+    
+    <form id="testForm">
+        <div class="form-group">
+            <label>Name:</label>
+            <input type="text" name="name" placeholder="Your Name" required>
+        </div>
+        
+        <div class="form-group">
+            <label>Email:</label>
+            <input type="email" name="email" placeholder="your@email.com" required>
+        </div>
+        
+        <div class="form-group">
+            <label>Mobile:</label>
+            <input type="tel" name="mobile" placeholder="9876543210" required>
+        </div>
+        
+        <div class="form-group">
+            <label>Project:</label>
+            <input type="text" name="project" value="Test Project" readonly>
+        </div>
+        
+        <button type="submit">Send Test Email</button>
+    </form>
+    
+    <div id="result"></div>
+    
+    <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="assets/js/form-handler.js"></script>
+    
+    <script>
+        // Test form submission
+        document.getElementById('testForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const result = document.getElementById('result');
+            result.innerHTML = '<p class="success">✅ Form submitted successfully! Check your email.</p>';
+        });
+    </script>
+</body>
+</html>

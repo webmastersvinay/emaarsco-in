@@ -1,0 +1,17 @@
+{
+  "name": "emaarsco-website",
+  "version": "1.0.0",
+  "description": "Emaar SCO Plots Website",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'Static site - no build needed'",
+    "start": "echo 'Static site'"
+  },
+  "dependencies": {
+    "nodemailer": "^6.9.7"
+  },
+  "devDependencies": {
+    "@vercel/node": "^3.0.0"
+  }
+}
